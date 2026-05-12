@@ -100,7 +100,8 @@ hr {
   font-size: 0.95rem;
 }
 
-.top-nav a {
+.top-nav a,
+.top-nav span {
   color: var(--text);
   text-decoration: none;
   margin-right: 1rem;
@@ -108,11 +109,6 @@ hr {
 
 .top-nav a:hover {
   text-decoration: underline;
-}
-
-.top-nav .home {
-  font-weight: 600;
-  margin-right: 1.5rem;
 }
 
 .essay-list {
