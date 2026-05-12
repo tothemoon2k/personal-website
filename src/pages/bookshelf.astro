@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const books = [
+  { title: 'Elon Musk', author: 'Walter Isaacson', url: 'https://www.amazon.com/Elon-Musk-Walter-Isaacson/dp/1982181281' },
+  { title: "The CEO's Secret Weapon", author: 'Jan Jones', url: 'https://www.amazon.com/CEOs-Secret-Weapon-Productivity-Effectiveness/dp/1137444231' },
+  { title: 'Isaac Newton', author: 'James Gleick', url: 'https://www.amazon.com/Isaac-Newton-James-Gleick/dp/1400032954' },
+  { title: 'The Book of Elon', author: 'Eric Jorgenson', url: 'https://www.amazon.com/Book-Elon-Guide-Purpose-Success/dp/154455074X' },
+  { title: "Don't Make Me Think", author: 'Steve Krug', url: 'https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515' },
+  { title: 'Outliers', author: 'Malcolm Gladwell', url: 'https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930' },
+  { title: 'Letters From a Stoic', author: 'Seneca', url: 'https://www.amazon.com/Letters-Penguin-Classics-Lucius-Annaeus/dp/0140442103' },
+  { title: 'Meditations', author: 'Marcus Aurelius', url: 'https://www.amazon.com/Meditations-New-Translation-Marcus-Aurelius/dp/0812968255' },
+  { title: 'How to Read a Book', author: 'Mortimer J. Adler and Charles Van Doren', url: 'https://www.amazon.com/How-Read-Book-Classic-Intelligent/dp/0671212095' },
+  { title: 'The Almanack of Naval Ravikant', author: 'Eric Jorgenson', url: 'https://www.amazon.com/Almanack-Naval-Ravikant-Wealth-Happiness/dp/1544514212' },
+  { title: 'The Mom Test', author: 'Rob Fitzpatrick', url: 'https://www.amazon.com/Mom-Test-customers-business-everyone/dp/1492180742' },
+];
+---
+
+<Layout title="Bookshelf — Justin Garner">
+  <h1>Bookshelf</h1>
+  <p>Books I've read and recommend. I try to keep this list up to date.</p>
+  <ul>
+    {books.map((book) => (
+      <li>
+        <a href={book.url} target="_blank" rel="noopener">
+          <em>{book.title}</em>
+        </a>
+        {' by '}{book.author}
+      </li>
+    ))}
+  </ul>
+</Layout>
