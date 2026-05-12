@@ -1,0 +1,148 @@
+:root {
+  --text: #222;
+  --muted: #777;
+  --link: #1a4ed8;
+  --bg: #fff;
+  --max-width: 38rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Charter, 'Iowan Old Style', 'Iowan', Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 6rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 1.5em 0 0.5em;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0.9em 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+blockquote {
+  border-left: 2px solid #ddd;
+  margin: 1em 0;
+  padding: 0 1em;
+  color: var(--muted);
+}
+
+code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: #f4f4f4;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 0.75em 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 2em 0;
+}
+
+.top-nav {
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
+
+.top-nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.top-nav .home {
+  font-weight: 600;
+  margin-right: 1.5rem;
+}
+
+.essay-list {
+  list-style: none;
+  padding: 0;
+}
+
+.essay-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0;
+}
+
+.essay-list .date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+.profile {
+  display: block;
+  margin: 1.25rem 0 1.5rem;
+  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+}
