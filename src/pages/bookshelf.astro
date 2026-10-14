@@ -2,10 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 
 const books = [
-  { title: 'Elon Musk', author: 'Walter Isaacson', url: 'https://www.amazon.com/Elon-Musk-Walter-Isaacson/dp/1982181281' },
+  { title: 'Elon Musk', author: 'Walter Isaacson', url: 'https://www.amazon.com/Elon-Musk-Walter-Isaacson/dp/1982181281', required: true },
+  { title: 'The Book of Elon', author: 'Eric Jorgenson', url: 'https://www.amazon.com/Book-Elon-Guide-Purpose-Success/dp/154455074X', required: true },
+  { title: 'The Goal', author: 'Eliyahu M. Goldratt and Jeff Cox', url: 'https://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951', required: true },
+  { title: 'Principles of Economics', author: 'Carl Menger', url: 'https://www.amazon.com/Principles-Economics-Carl-Menger/dp/1610162021', required: true },
+  { title: 'Reentry', author: 'Eric Berger', url: 'https://www.amazon.com/Reentry-SpaceX-Reusable-Rockets-Launched/dp/1637745273' },
+  { title: 'The Founders', author: 'Jimmy Soni', url: 'https://www.amazon.com/Founders-Paypal-Entrepreneurs-Shaped-Silicon/dp/1501197266' },
+  { title: 'Elon Musk', author: 'Ashlee Vance', url: 'https://www.amazon.com/Elon-Musk-SpaceX-Fantastic-Future/dp/006230125X' },
+  { title: 'Edison: A Biography', author: 'Matthew Josephson', url: 'https://www.amazon.com/Edison-Biography-Matthew-Josephson/dp/0471548065' },
   { title: "The CEO's Secret Weapon", author: 'Jan Jones', url: 'https://www.amazon.com/CEOs-Secret-Weapon-Productivity-Effectiveness/dp/1137444231' },
   { title: 'Isaac Newton', author: 'James Gleick', url: 'https://www.amazon.com/Isaac-Newton-James-Gleick/dp/1400032954' },
-  { title: 'The Book of Elon', author: 'Eric Jorgenson', url: 'https://www.amazon.com/Book-Elon-Guide-Purpose-Success/dp/154455074X' },
   { title: "Don't Make Me Think", author: 'Steve Krug', url: 'https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515' },
   { title: 'Outliers', author: 'Malcolm Gladwell', url: 'https://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017930' },
   { title: 'Letters From a Stoic', author: 'Seneca', url: 'https://www.amazon.com/Letters-Penguin-Classics-Lucius-Annaeus/dp/0140442103' },
@@ -16,7 +22,6 @@ const books = [
   { title: 'The Algorithm', author: 'Jon McNeill', url: 'https://www.amazon.com/Algorithm-Hypergrowth-Formula-Transformed-Lululemon/dp/B0FFG5KFSK' },
   { title: 'Liftoff', author: 'Eric Berger', url: 'https://www.amazon.com/Liftoff-Desperate-Early-Launched-SpaceX/dp/0062979981' },
   { title: 'The ONE Thing', author: 'Gary Keller and Jay Papasan', url: 'https://www.amazon.com/ONE-Thing-Surprisingly-Extraordinary-Results/dp/1885167776' },
-  { title: 'The Goal', author: 'Eliyahu M. Goldratt and Jeff Cox', url: 'https://www.amazon.com/Goal-Process-Ongoing-Improvement/dp/0884271951' },
   { title: 'Working Backwards', author: 'Colin Bryar and Bill Carr', url: 'https://www.amazon.com/Working-Backwards-Insights-Stories-Secrets/dp/1250267595' },
   { title: 'The General and the Genius', author: 'James Kunetka', url: 'https://www.amazon.com/General-Genius-Oppenheimer-Unlikely-Partnership/dp/1621573389' },
   { title: 'Napoleon', author: 'David A. Bell', url: 'https://www.amazon.com/Napoleon-Concise-Biography-David-Bell/dp/0190262710' },
@@ -29,11 +34,11 @@ const books = [
 
 <Layout title="Bookshelf — Justin Garner">
   <h1>Bookshelf</h1>
-  <p>Books I've read and recommend. I try to keep this list up to date.</p>
+  <p>Books I've read and recommend. My all-time favorites are in red.</p>
   <ul>
     {books.map((book) => (
       <li>
-        <a href={book.url} target="_blank" rel="noopener">
+        <a href={book.url} target="_blank" rel="noopener" class:list={{ required: book.required }}>
           <em>{book.title}</em>
         </a>
         {' by '}{book.author}
@@ -41,3 +46,9 @@ const books = [
     ))}
   </ul>
 </Layout>
+
+<style>
+  a.required {
+    color: #c81e1e;
+  }
+</style>
